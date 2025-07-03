@@ -66,6 +66,18 @@
   background-image: linear-gradient(to right, #7fd1cc 0%, #9694f5 100%);
 }
 
+@utility text-gradient-vertical {
+  background-image: linear-gradient(to bottom, #7fd1cc, #9694f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility text-gradient-horizontal {
+  background-image: linear-gradient(to right, #7fd1cc, #9694f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 :root {
   --background: #0e1116;
   --foreground: #f8f9fc;
