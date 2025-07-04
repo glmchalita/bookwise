@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Link, { type LinkProps } from 'next/link'
-
 import { usePathname } from 'next/navigation'
 import type { ElementType } from 'react'
+
 export interface NavLinkProps extends LinkProps {
   title: string
   icon: ElementType

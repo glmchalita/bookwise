@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { FaArrowRightToBracket } from 'react-icons/fa6'
 import { Logo } from '@/assets/logo'
+import { SignInIcon } from '../(components)/icons'
 import { Nav } from '../(components)/nav'
 
 export default function RootLayout({
@@ -21,12 +21,12 @@ export default function RootLayout({
             href="/"
             className="mb-7 flex cursor-pointer items-center justify-center gap-3 rounded-sm px-2 py-1 text-button-md text-gray-200 hover:bg-gray-200/4"
           >
-            Fazer login <FaArrowRightToBracket size={20} className="text-green-100" />
+            Fazer login <SignInIcon size={20} className="text-green-100" />
           </Link>
         </footer>
       </aside>
 
-      <main className="col-start-2 max-w-screen bg-gray-950">{children}</main>
+      <main className="col-start-2 mt-18 max-w-screen">{children}</main>
     </div>
   )
 }
