@@ -21,17 +21,17 @@ export default function Login() {
         </header>
 
         <section className="mt-10 flex flex-col gap-4">
-          <Button type="button">
+          <Button href={''}>
             <FcGoogle size={32} />
             Entrar com Google
           </Button>
 
-          <Button type="button">
+          <Button href={''}>
             <FaGithub size={32} />
             Entrar com Github
           </Button>
 
-          <Button type="button">
+          <Button href={'/home'}>
             <PiRocketLaunch size={32} className="text-purple-100" />
             Acessar como visitante
           </Button>
