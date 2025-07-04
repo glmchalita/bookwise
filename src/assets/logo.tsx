@@ -18,7 +18,9 @@ export function Logo() {
           fill="#8381D9"
         />
       </svg>
-      <span className="font-bold text-gradient-horizontal text-xl leading-relaxed">BookWise</span>
+      <span className="cursor-default font-bold text-gradient-horizontal text-xl leading-relaxed">
+        BookWise
+      </span>
     </strong>
   )
 }
