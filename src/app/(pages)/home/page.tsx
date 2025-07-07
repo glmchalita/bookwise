@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { CaretRightIcon, ChartLineUpIcon } from '@/app/(components)/icons'
-import { PopularBooks } from '@/app/(components)/popular-books'
-import { RecentReviews } from '@/app/(components)/recent-reviews'
+import { PopularBooks } from './popular-books.component'
+import { RecentReviews } from './recent-reviews.component'
 
 export default function Home() {
   return (

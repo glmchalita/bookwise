@@ -2,10 +2,10 @@
 
 import { useQuery } from '@tanstack/react-query'
 import Image from 'next/image'
+import { BookInfo } from '@/app/(components)/book-title'
+import { Rating } from '@/app/(components)/rating'
 import type { PopularBookResponse } from '@/app/api/popular-books/route'
 import { api } from '@/lib/axios'
-import { BookInfo } from '../book-title'
-import { Rating } from '../rating'
 
 export function PopularBooks() {
   const { data: popularBooks } = useQuery<PopularBookResponse[]>({
