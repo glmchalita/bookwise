@@ -63,6 +63,7 @@ async function main() {
         id: rating.id,
         rate: rating.rate,
         description: rating.description,
+        created_at: rating.created_at,
         user: {
           connect: { id: rating.user_id },
         },
