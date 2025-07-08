@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Nunito_Sans } from 'next/font/google'
 import './globals.css'
-import { QueryClientProvider } from '@tanstack/react-query'
-import { queryClient } from '@/lib/react-query'
+import Providers from './providers'
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -21,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${nunitoSans.className} antialiased`}>
       <body>
-        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

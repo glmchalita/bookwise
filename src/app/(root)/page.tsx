@@ -1,9 +1,8 @@
+'use client'
+
 import Image from 'next/image'
-import { GithubIcon } from '@/assets/github'
-import { GoogleIcon } from '@/assets/google'
 import loginImage from '@/assets/login.png'
-import { Button } from './(components)/button'
-import { RocketLaunchIcon } from './(components)/icons'
+import LoginActions from './login-actions.component'
 
 export default function Login() {
   return (
@@ -20,22 +19,7 @@ export default function Login() {
           </span>
         </header>
 
-        <section className="mt-10 flex flex-col gap-4">
-          <Button href={''}>
-            <GoogleIcon />
-            Entrar com Google
-          </Button>
-
-          <Button href={''}>
-            <GithubIcon />
-            Entrar com Github
-          </Button>
-
-          <Button href={'/home'}>
-            <RocketLaunchIcon size={32} className="text-purple-100" />
-            Acessar como visitante
-          </Button>
-        </section>
+        <LoginActions />
       </div>
     </div>
   )
