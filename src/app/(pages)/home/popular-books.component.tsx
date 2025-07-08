@@ -27,6 +27,7 @@ export function PopularBooks() {
               alt={popularBook.book.name}
               width={64}
               height={94}
+              className="h-auto w-auto"
             />
 
             <div className="flex flex-col justify-between">

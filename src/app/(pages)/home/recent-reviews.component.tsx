@@ -7,6 +7,7 @@ import { BookInfo } from '@/app/(components)/book-title'
 import { Rating } from '@/app/(components)/rating'
 import type { RecentReviewResponse } from '@/app/api/recent-reviews/route'
 import { api } from '@/lib/axios'
+import dayjs from '@/lib/dayjs'
 
 export function RecentReviews() {
   const { data: recentReviews } = useQuery<RecentReviewResponse[]>({
@@ -48,9 +49,11 @@ function Card({ recentReview }: CardProps) {
           </Link>
         </div>
 
-        <div className="flex flex-col text-body-md text-gray-100">
-          {recentReview.user.name}
-          <span className="text-body-sm text-gray-400">Hoje</span>
+        <div className="flex flex-col ">
+          <span className="text-body-md text-gray-100">{recentReview.user.name}</span>
+          <span className="cap text-body-sm text-gray-400 capitalize">
+            {dayjs(recentReview.created_at).fromNow()}
+          </span>
         </div>
 
         <Rating rate={recentReview.rate} className="ml-auto" />
@@ -64,6 +67,7 @@ function Card({ recentReview }: CardProps) {
           width={108}
           quality={100}
           priority
+          className="h-auto w-auto"
         />
 
         <div className="flex flex-col gap-5">
