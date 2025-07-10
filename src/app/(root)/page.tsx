@@ -1,10 +1,16 @@
-'use client'
-
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 import loginImage from '@/assets/login.png'
-import LoginActions from './login-actions.component'
+import { auth } from '@/lib/auth'
+import { LoginActions } from './@components'
 
-export default function Login() {
+export default async function Login() {
+  const session = await auth()
+
+  if (session?.user) {
+    redirect('/home')
+  }
+
   return (
     <div className="m-auto flex h-screen min-w-screen items-center">
       <div className="ml-5 flex items-center justify-center">

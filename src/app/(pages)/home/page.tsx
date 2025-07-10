@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import { CaretRightIcon, ChartLineUpIcon } from '@/app/(components)/icons'
-import { PopularBooks } from './popular-books.component'
-import { RecentReviews } from './recent-reviews.component'
+import { PopularBooks, RecentReviews } from './@components'
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <div className="mb-10 flex items-center gap-3">

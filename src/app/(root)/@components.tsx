@@ -6,7 +6,7 @@ import { GoogleIcon } from '@/assets/google'
 import { Button } from '../(components)/button'
 import { RocketLaunchIcon } from '../(components)/icons'
 
-export default function LoginActions() {
+export function LoginActions() {
   async function handleGoogleLogin() {
     await signIn('google', { redirectTo: '/home' })
   }
