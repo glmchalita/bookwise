@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { signOut } from 'next-auth/react'
 import type { ElementType } from 'react'
 import { Avatar } from '../(components)/avatar'
-import { BinocularsIcon, ChartLineUpIcon, SignOutIcon } from '../(components)/icons'
+import { BinocularsIcon, ChartLineUpIcon, SignOutIcon, UserIcon } from '../(components)/icons'
 
 function NavLink({ title, icon: Icon, href }: { title: string; icon: ElementType; href: string }) {
   const pathname = usePathname()
@@ -35,11 +35,12 @@ function NavLink({ title, icon: Icon, href }: { title: string; icon: ElementType
   )
 }
 
-export function Nav() {
+export function Nav({ userLogged }: { userLogged: boolean }) {
   return (
     <nav className="mt-16 flex flex-col gap-4">
       <NavLink title="Início" icon={ChartLineUpIcon} href="/home" />
       <NavLink title="Explorar" icon={BinocularsIcon} href="/explorer" />
+      {userLogged && <NavLink title="Perfil" icon={UserIcon} href="" />}
     </nav>
   )
 }

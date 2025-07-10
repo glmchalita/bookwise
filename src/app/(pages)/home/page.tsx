@@ -1,36 +1,37 @@
-import Link from 'next/link'
-import { CaretRightIcon, ChartLineUpIcon } from '@/app/(components)/icons'
-import { PopularBooks, RecentReviews } from './@components'
+import { ChartLineUpIcon } from '@/app/(components)/icons'
+import { auth } from '@/lib/auth'
+import { PopularBooks, RecentReviews, SectionTitle, UserLastRead } from './@components'
 
 export default async function Home() {
+  const session = await auth()
+  const userLogged = session?.user
+
   return (
     <>
-      <div className="mb-10 flex items-center gap-3">
+      <header className="mb-10 flex items-center gap-3">
         <ChartLineUpIcon size={32} className="text-green-100" />
         <h1 className="text-gray-100 text-title-lg">Início</h1>
-      </div>
+      </header>
 
-      <div className="grid grid-cols-[2fr_1fr] gap-16">
+      <main className="grid grid-cols-[2fr_1fr] gap-16">
         <div>
-          <span className="text-body-sm text-gray-100">Avaliações mais recentes</span>
-
-          <RecentReviews />
-        </div>
-
-        <div className="mr-24">
-          <div className="mb-4 flex items-center justify-between">
-            <span className="text-body-sm text-gray-100">Livros populares</span>
-            <Link
-              href="/explorer"
-              className="flex items-center gap-2 rounded-sm px-2 py-1 text-button-sm text-purple-100 hover:bg-purple-100/8"
-            >
-              Ver todos <CaretRightIcon />
-            </Link>
+          {userLogged && (
+            <div className="pb-10">
+              <SectionTitle title="Sua última leitura" viewAllButton />
+              <UserLastRead />
+            </div>
+          )}
+          <div className="pb-5">
+            <SectionTitle title="Avaliações mais recentes" />
+            <RecentReviews />
           </div>
-
-          <PopularBooks />
         </div>
-      </div>
+
+        <aside className="mr-24">
+          <SectionTitle title="Livros populares" viewAllButton />
+          <PopularBooks />
+        </aside>
+      </main>
     </>
   )
 }

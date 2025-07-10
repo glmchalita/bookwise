@@ -8,6 +8,7 @@ import {
   SignInIcon,
   SignOutIcon,
   StarIcon,
+  UserIcon,
 } from '@phosphor-icons/react'
 
 export {
@@ -18,4 +19,5 @@ export {
   SignInIcon,
   SignOutIcon,
   StarIcon,
+  UserIcon,
 }
