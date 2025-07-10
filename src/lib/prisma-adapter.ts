@@ -14,6 +14,7 @@ export function PrismaAdapter(): Adapter {
       return {
         id: prismaUser.id,
         name: prismaUser.name,
+        profile_url: prismaUser.profile_url,
         image: prismaUser.avatar_url,
         email: '',
         emailVerified: null,
@@ -28,6 +29,7 @@ export function PrismaAdapter(): Adapter {
       return {
         id: user.id,
         name: user.name,
+        profile_url: user.profile_url,
         image: user.avatar_url,
         email: '',
         emailVerified: null,
@@ -55,6 +57,7 @@ export function PrismaAdapter(): Adapter {
       return {
         id: user.id,
         name: user.name,
+        profile_url: user.profile_url,
         image: user.avatar_url,
         email: '',
         emailVerified: null,
@@ -75,6 +78,7 @@ export function PrismaAdapter(): Adapter {
       return {
         id: prismaUser.id,
         name: prismaUser.name,
+        profile_url: prismaUser.profile_url,
         image: prismaUser.avatar_url,
         email: '',
         emailVerified: null,
@@ -140,6 +144,7 @@ export function PrismaAdapter(): Adapter {
         user: {
           id: user.id,
           name: user.name,
+          profile_url: user.profile_url,
           image: user.avatar_url,
           email: '',
           emailVerified: null,
