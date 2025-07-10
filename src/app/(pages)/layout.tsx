@@ -4,7 +4,7 @@ import { auth } from '@/lib/auth'
 import { SignInIcon } from '../(components)/icons'
 import { Nav, SignedUser } from './@components'
 
-export default async function RootLayout({
+export default async function PagesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
