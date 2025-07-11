@@ -29,6 +29,10 @@
   --text-body-sm--line-height: 160%;
   --text-body-sm--font-weight: 400;
 
+  --text-body-xs: 12px;
+  --text-body-xs--line-height: 160%;
+  --text-body-xs--font-weight: 400;
+
   --text-button-lg: 18px;
   --text-button-lg--line-height: 160%;
   --text-button-lg--font-weight: 700;
