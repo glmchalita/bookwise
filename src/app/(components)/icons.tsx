@@ -2,6 +2,7 @@
 
 import {
   BinocularsIcon,
+  BookOpenIcon,
   CaretRightIcon,
   ChartLineUpIcon,
   RocketLaunchIcon,
@@ -13,6 +14,7 @@ import {
 
 export {
   BinocularsIcon,
+  BookOpenIcon,
   CaretRightIcon,
   ChartLineUpIcon,
   RocketLaunchIcon,

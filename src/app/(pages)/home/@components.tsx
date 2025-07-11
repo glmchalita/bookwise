@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Avatar } from '@/app/(components)/avatar'
 import { BookInfo } from '@/app/(components)/book-info'
-import { CaretRightIcon } from '@/app/(components)/icons'
+import { BookOpenIcon, CaretRightIcon } from '@/app/(components)/icons'
 import { Rating } from '@/app/(components)/rating'
 import { Timestamp } from '@/app/(components)/timestamp'
 import type { PopularBookResponse } from '@/app/api/popular-books/route'
@@ -100,7 +100,16 @@ export function UserLastRead() {
       </div>
     </div>
   ) : (
-    <div>Ainda não avaliou nenhum livro</div>
+    <div className="flex items-center justify-between rounded-lg bg-gray-600 px-6 py-5 text-body-sm">
+      <div>
+        <p>Você ainda não avaliou nenhum livro.</p>
+        <p>Que tal começar agora?</p>
+        <p>Explore livros e escreva sua primeira avaliação!</p>
+      </div>
+      <Link href="/explorer" className="transition hover:text-gray-400">
+        <BookOpenIcon size={64} />
+      </Link>
+    </div>
   )
 }
 
