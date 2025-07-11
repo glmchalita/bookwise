@@ -17,6 +17,7 @@ async function main() {
       data: {
         id: user.id,
         name: user.name,
+        profile_url: user.profile_url,
         avatar_url: user.avatar_url,
       },
     })

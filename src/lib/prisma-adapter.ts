@@ -8,6 +8,7 @@ export function PrismaAdapter(): Adapter {
         data: {
           name: user.name,
           avatar_url: user.avatar_url,
+          profile_url: user.profile_url,
         },
       })
 
