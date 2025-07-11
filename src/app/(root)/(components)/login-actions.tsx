@@ -1,10 +1,10 @@
 'use client'
 
+import { RocketLaunchIcon } from '@phosphor-icons/react'
 import { signIn } from 'next-auth/react'
+import { Button } from '@/app/(components)/button'
 import { GithubIcon } from '@/assets/github'
 import { GoogleIcon } from '@/assets/google'
-import { Button } from '../(components)/button'
-import { RocketLaunchIcon } from '../(components)/icons'
 
 export function LoginActions() {
   async function handleGoogleLogin() {

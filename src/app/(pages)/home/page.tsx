@@ -1,10 +1,18 @@
-import { ChartLineUpIcon } from '@/app/(components)/icons'
+import { ChartLineUpIcon } from '@phosphor-icons/react/dist/ssr'
 import { auth } from '@/lib/auth'
-import { PopularBooks, RecentReviews, SectionTitle, UserLastRead } from './@components'
+import { getPopularBooks, getRecentReviews, getUserLastRead } from './@ssr-queries'
+import { PopularBooks } from './(components)/popular-books'
+import { RecentReviews } from './(components)/recent-reviews'
+import { SectionTitle } from './(components)/section-title'
+import { UserLastRead } from './(components)/user-last-read'
 
 export default async function Home() {
   const session = await auth()
   const userLogged = session?.user
+
+  const userLastRead = userLogged ? await getUserLastRead(userLogged.id) : null
+
+  const [recentReviews, popularBooks] = await Promise.all([getRecentReviews(), getPopularBooks()])
 
   return (
     <>
@@ -18,18 +26,19 @@ export default async function Home() {
           {userLogged && (
             <div className="pb-10">
               <SectionTitle title="Sua última leitura" viewAllButton />
-              <UserLastRead />
+              <UserLastRead userLastRead={userLastRead} />
             </div>
           )}
+
           <div className="pb-5">
             <SectionTitle title="Avaliações mais recentes" />
-            <RecentReviews />
+            <RecentReviews recentReviews={recentReviews} />
           </div>
         </div>
 
         <aside className="mr-24">
           <SectionTitle title="Livros populares" viewAllButton />
-          <PopularBooks />
+          <PopularBooks popularBooks={popularBooks} />
         </aside>
       </main>
     </>

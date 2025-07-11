@@ -1,4 +1,4 @@
-import { StarIcon } from '@phosphor-icons/react'
+import { StarIcon } from '@phosphor-icons/react/dist/ssr'
 
 interface RatingProps {
   rate: number

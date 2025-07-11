@@ -1,8 +1,9 @@
+import { SignInIcon } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 import { Logo } from '@/assets/logo'
 import { auth } from '@/lib/auth'
-import { SignInIcon } from '../(components)/icons'
-import { Nav, SignedUser } from './@components'
+import { Nav } from './(components)/nav'
+import { SignedUser } from './(components)/signed-user'
 
 export default async function PagesLayout({
   children,
@@ -17,12 +18,16 @@ export default async function PagesLayout({
       <aside className="fixed mt-5 ml-5 flex h-[calc(100dvh-2.5rem)] flex-col items-center justify-between rounded-xl bg-gray-950 px-14 pt-10">
         <header>
           <Logo />
-          <Nav userLogged={!!userLogged} />
+          <Nav profileUrl={userLogged?.profile_url} />
         </header>
 
         <footer className="pb-7">
           {userLogged ? (
-            <SignedUser avatarUrl={userLogged.image} name={userLogged.name} />
+            <SignedUser
+              profileUrl={userLogged.profile_url}
+              avatarUrl={userLogged.image}
+              name={userLogged.name}
+            />
           ) : (
             <Link
               href="/"

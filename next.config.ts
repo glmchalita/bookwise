@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
       {protocol: 'https', hostname: 'avatars.githubusercontent.com', pathname: '**'}
     ]
   },
+  experimental: {
+    optimizePackageImports: ["@phosphor-icons/react"]
+  }
 };
 
 export default nextConfig;

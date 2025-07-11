@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import loginImage from '@/assets/login.png'
 import { auth } from '@/lib/auth'
-import { LoginActions } from './@components'
+import { LoginActions } from './(components)/login-actions'
 
 export default async function Login() {
   const session = await auth()
