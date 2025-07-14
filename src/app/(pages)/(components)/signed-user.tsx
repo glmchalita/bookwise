@@ -7,7 +7,7 @@ import { Avatar } from '@/app/(components)/avatar'
 
 interface SignedUserProps {
   profileUrl: string
-  avatarUrl: string | null | undefined
+  avatarUrl: string | null
   name: string
 }
 

@@ -20,7 +20,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
           id: profile.sub,
           name: profile.name,
           profile_url: generateProfileUrl(profile.name),
-          avatar_url: profile.picture,
+          avatar_url: null,
         }
       },
     }),
@@ -30,7 +30,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
           id: profile.id.toString(),
           name: profile.name ?? profile.login,
           profile_url: generateProfileUrl(profile.name ?? profile.login),
-          avatar_url: profile.avatar_url,
+          avatar_url: null,
         }
       },
     }),
