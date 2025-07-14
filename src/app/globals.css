@@ -2,47 +2,47 @@
 
 @theme {
   --text-title-lg: 24px;
-  --text-title-lg--line-height: 140%;
+  --text-title-lg--line-height: 1.4;
   --text-title-lg--font-weight: 700;
 
   --text-title-md: 20px;
-  --text-title-md--line-height: 140%;
+  --text-title-md--line-height: 1.4;
   --text-title-md--font-weight: 700;
 
   --text-title-sm: 18px;
-  --text-title-sm--line-height: 140%;
+  --text-title-sm--line-height: 1.4;
   --text-title-sm--font-weight: 700;
 
   --text-title-xs: 16px;
-  --text-title-xs--line-height: 140%;
+  --text-title-xs--line-height: 1.4;
   --text-title-xs--font-weight: 700;
 
   --text-body-lg: 20px;
-  --text-body-lg--line-height: 160%;
+  --text-body-lg--line-height: 1.6;
   --text-body-lg--font-weight: 400;
 
   --text-body-md: 16px;
-  --text-body-md--line-height: 160%;
+  --text-body-md--line-height: 1.6;
   --text-body-md--font-weight: 400;
 
   --text-body-sm: 14px;
-  --text-body-sm--line-height: 160%;
+  --text-body-sm--line-height: 1.6;
   --text-body-sm--font-weight: 400;
 
   --text-body-xs: 12px;
-  --text-body-xs--line-height: 160%;
+  --text-body-xs--line-height: 1.6;
   --text-body-xs--font-weight: 400;
 
   --text-button-lg: 18px;
-  --text-button-lg--line-height: 160%;
+  --text-button-lg--line-height: 1.6;
   --text-button-lg--font-weight: 700;
 
   --text-button-md: 16px;
-  --text-button-md--line-height: 160%;
+  --text-button-md--line-height: 1.6;
   --text-button-md--font-weight: 700;
 
   --text-button-sm: 14px;
-  --text-button-sm--line-height: 160%;
+  --text-button-sm--line-height: 1.6;
   --text-button-sm--font-weight: 700;
 
   --color-gray-100: #f8f9fc;
