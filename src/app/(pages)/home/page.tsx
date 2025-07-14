@@ -15,12 +15,14 @@ export default async function Home() {
 
   return (
     <>
-      <header className="mb-10 flex items-center gap-3">
-        <ChartLineUpIcon size={32} className="text-green-100" />
-        <h1 className="text-gray-100 text-title-lg">Início</h1>
+      <header className="mb-10">
+        <h1 className="flex items-center gap-3 text-gray-100 text-title-lg">
+          <ChartLineUpIcon size={32} className="text-green-100" />
+          Início
+        </h1>
       </header>
 
-      <main className="grid grid-cols-[2fr_1fr] gap-16">
+      <main className="flex gap-16">
         <div>
           {loggedUser && (
             <div className="pb-10">
@@ -29,13 +31,13 @@ export default async function Home() {
             </div>
           )}
 
-          <div className="pb-5">
+          <div>
             <SectionTitle title="Avaliações mais recentes" />
             <RecentReviews recentReviews={recentReviews} />
           </div>
         </div>
 
-        <aside className="mr-24">
+        <aside>
           <SectionTitle title="Livros populares" viewAllButton />
           <PopularBooks popularBooks={popularBooks} />
         </aside>

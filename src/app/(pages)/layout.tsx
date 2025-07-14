@@ -13,14 +13,14 @@ export default async function PagesLayout({
   const loggedUser = (await auth())?.user
 
   return (
-    <div className="grid min-h-screen grid-cols-[minmax(12rem,15rem)_1fr] gap-24">
-      <aside className="fixed mt-5 ml-5 flex h-[calc(100dvh-2.5rem)] flex-col items-center justify-between rounded-xl bg-gray-950 px-14 pt-10">
+    <>
+      <aside className="fixed top-5 left-5 flex h-[calc(100dvh-2.5rem)] w-[15rem] flex-col items-center justify-between rounded-xl bg-gray-950 px-14 pt-10 pb-6">
         <header>
           <Logo />
           <Nav profileUrl={loggedUser?.profile_url} />
         </header>
 
-        <footer className="pb-7">
+        <footer>
           {loggedUser ? (
             <SignedUser
               profileUrl={loggedUser.profile_url}
@@ -38,7 +38,9 @@ export default async function PagesLayout({
         </footer>
       </aside>
 
-      <main className="col-start-2 mt-18 max-w-screen">{children}</main>
-    </div>
+      <div className="grid min-h-screen grid-cols-[15rem_1fr]">
+        <main className="col-start-2 ml-5 max-w-screen px-24 pt-18 pb-5">{children}</main>
+      </div>
+    </>
   )
 }

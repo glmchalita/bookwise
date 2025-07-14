@@ -12,7 +12,10 @@ export function PopularBooks({ popularBooks }: PopularBooksProps) {
     <div className="flex flex-col gap-4">
       {popularBooks?.map((popularBook) => {
         return (
-          <div key={popularBook.id} className="flex gap-5 rounded-lg bg-gray-700 px-5 py-4">
+          <div
+            key={popularBook.id}
+            className="flex w-[324px] gap-5 rounded-lg bg-gray-700 px-5 py-4"
+          >
             <Image
               src={popularBook.book.cover_url}
               alt={popularBook.book.name}
