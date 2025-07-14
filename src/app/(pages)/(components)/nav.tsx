@@ -1,4 +1,6 @@
-import { BinocularsIcon, ChartLineUpIcon, UserIcon } from '@phosphor-icons/react/dist/ssr'
+'use client'
+
+import { BinocularsIcon, ChartLineUpIcon, UserIcon } from '@phosphor-icons/react'
 import { NavLink } from './nav-link'
 
 export function Nav({ profileUrl }: { profileUrl: string | undefined }) {

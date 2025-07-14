@@ -7,10 +7,11 @@ import { SectionTitle } from './(components)/section-title'
 import { UserLastRead } from './(components)/user-last-read'
 
 export default async function Home() {
-  const session = await auth()
-  const userLogged = session?.user
+  const userLogged = (await auth())?.user
 
-  const userLastRead = userLogged ? await getUserLastRead(userLogged.id) : null
+  if (!userLogged) return null
+
+  const userLastRead = await getUserLastRead(userLogged.id)
 
   const [recentReviews, popularBooks] = await Promise.all([getRecentReviews(), getPopularBooks()])
 

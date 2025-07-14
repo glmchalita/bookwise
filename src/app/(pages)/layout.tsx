@@ -10,8 +10,9 @@ export default async function PagesLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const session = await auth()
-  const userLogged = session?.user
+  const userLogged = (await auth())?.user
+
+  if (!userLogged) return null
 
   return (
     <div className="grid min-h-screen grid-cols-[minmax(12rem,15rem)_1fr] gap-24">
@@ -25,7 +26,7 @@ export default async function PagesLayout({
           {userLogged ? (
             <SignedUser
               profileUrl={userLogged.profile_url}
-              avatarUrl={userLogged.image}
+              avatarUrl={userLogged.avatar_url}
               name={userLogged.name}
             />
           ) : (
