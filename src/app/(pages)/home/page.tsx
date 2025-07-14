@@ -7,11 +7,9 @@ import { SectionTitle } from './(components)/section-title'
 import { UserLastRead } from './(components)/user-last-read'
 
 export default async function Home() {
-  const userLogged = (await auth())?.user
+  const loggedUser = (await auth())?.user
 
-  if (!userLogged) return null
-
-  const userLastRead = await getUserLastRead(userLogged.id)
+  const userLastRead = loggedUser ? await getUserLastRead(loggedUser.id) : null
 
   const [recentReviews, popularBooks] = await Promise.all([getRecentReviews(), getPopularBooks()])
 
@@ -24,7 +22,7 @@ export default async function Home() {
 
       <main className="grid grid-cols-[2fr_1fr] gap-16">
         <div>
-          {userLogged && (
+          {loggedUser && (
             <div className="pb-10">
               <SectionTitle title="Sua última leitura" viewAllButton />
               <UserLastRead userLastRead={userLastRead} />

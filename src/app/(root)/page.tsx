@@ -5,9 +5,9 @@ import { auth } from '@/lib/auth'
 import { LoginActions } from './(components)/login-actions'
 
 export default async function Login() {
-  const userLogged = (await auth())?.user
+  const loggedUser = (await auth())?.user
 
-  if (userLogged) {
+  if (loggedUser) {
     redirect('/home')
   }
 

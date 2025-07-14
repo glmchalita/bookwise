@@ -54,6 +54,7 @@ model CategoriesOnBooks {
   category Category @relation(fields: [category_id], references: [id])
 
   @@id([book_id, category_id])
+  @@map("categories_on_books")
 }
 
 model Rating {

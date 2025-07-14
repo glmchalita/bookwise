@@ -10,24 +10,22 @@ export default async function PagesLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const userLogged = (await auth())?.user
-
-  if (!userLogged) return null
+  const loggedUser = (await auth())?.user
 
   return (
     <div className="grid min-h-screen grid-cols-[minmax(12rem,15rem)_1fr] gap-24">
       <aside className="fixed mt-5 ml-5 flex h-[calc(100dvh-2.5rem)] flex-col items-center justify-between rounded-xl bg-gray-950 px-14 pt-10">
         <header>
           <Logo />
-          <Nav profileUrl={userLogged?.profile_url} />
+          <Nav profileUrl={loggedUser?.profile_url} />
         </header>
 
         <footer className="pb-7">
-          {userLogged ? (
+          {loggedUser ? (
             <SignedUser
-              profileUrl={userLogged.profile_url}
-              avatarUrl={userLogged.avatar_url}
-              name={userLogged.name}
+              profileUrl={loggedUser.profile_url}
+              avatarUrl={loggedUser.avatar_url}
+              name={loggedUser.name}
             />
           ) : (
             <Link
