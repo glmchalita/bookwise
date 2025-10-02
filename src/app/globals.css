@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "tailwind-scrollbar";
+
 @theme {
   --text-title-lg: 24px;
   --text-title-lg--line-height: 1.4;
@@ -62,6 +64,33 @@
   --color-green-300: #0a313c;
 }
 
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@utility shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+@utility text-body-lg {
+  font-size: var(--text-body-lg);
+  line-height: var(--text-body-lg--line-height);
+  font-weight: var(--text-body-lg--font-weight);
+}
 @utility bg-gradient-vertical {
   background-image: linear-gradient(to bottom, #7fd1cc 0%, #9694f5 100%);
 }
