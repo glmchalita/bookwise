@@ -1,6 +1,6 @@
-export function Logo() {
+export function BookWiseIcon() {
   return (
-    <strong className="flex items-center gap-2">
+    <strong className="flex cursor-pointer items-center gap-2">
       <svg
         width={24}
         height={24}
@@ -18,9 +18,7 @@ export function Logo() {
           fill="#8381D9"
         />
       </svg>
-      <span className="cursor-default font-bold text-gradient-horizontal text-xl leading-relaxed">
-        BookWise
-      </span>
+      <span className="font-bold text-gradient-horizontal text-xl leading-relaxed">BookWise</span>
     </strong>
   )
 }

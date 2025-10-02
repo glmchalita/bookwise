@@ -5,13 +5,13 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type { ElementType } from 'react'
 
-interface NavLinkProps {
+interface NavbarLinkProps {
   title: string
   icon: ElementType
   href: string
 }
 
-export function NavLink({ title, icon: Icon, href }: NavLinkProps) {
+export function NavbarLink({ title, icon: Icon, href }: NavbarLinkProps) {
   const pathname = usePathname()
   const isActive = pathname === href
 
