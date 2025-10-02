@@ -1,9 +1,9 @@
 import { SignInIcon } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
-import { Logo } from '@/assets/logo'
+import { Avatar, BookWiseIcon } from '@/components'
+import { FooterLogoutButton } from '@/components/layout/footer-logout-button'
+import { Navbar } from '@/components/layout/navbar'
 import { auth } from '@/lib/auth'
-import { Nav } from './(components)/nav'
-import { SignedUser } from './(components)/signed-user'
 
 export default async function PagesLayout({
   children,
@@ -14,19 +14,27 @@ export default async function PagesLayout({
 
   return (
     <>
-      <aside className="fixed top-5 left-5 flex h-[calc(100dvh-2.5rem)] w-[15rem] flex-col items-center justify-between rounded-xl bg-gray-950 px-14 pt-10 pb-6">
+      <aside className="fixed top-5 left-5 flex h-[calc(100dvh-2.5rem)] w-[15rem] flex-col items-center justify-between rounded-xl bg-[url('/images/background-sidebar.png')] bg-cover pt-10 pb-6">
         <header>
-          <Logo />
-          <Nav profileUrl={loggedUser?.profile_url} />
+          <Link href={'/home'}>
+            <BookWiseIcon />
+          </Link>
+          <Navbar profileUrl={loggedUser?.profile_url} />
         </header>
 
         <footer>
           {loggedUser ? (
-            <SignedUser
-              profileUrl={loggedUser.profile_url}
-              avatarUrl={loggedUser.avatar_url}
-              name={loggedUser.name}
-            />
+            <div className="flex items-center gap-3">
+              <Link
+                href={`/profile/${loggedUser.profile_url}`}
+                className="flex cursor-pointer items-center justify-center gap-3"
+              >
+                <Avatar src={loggedUser.avatar_url} name={loggedUser.name} size={32} />
+                <span>{loggedUser.name.split(' ')[0]}</span>
+              </Link>
+
+              <FooterLogoutButton />
+            </div>
           ) : (
             <Link
               href="/"
@@ -38,7 +46,7 @@ export default async function PagesLayout({
         </footer>
       </aside>
 
-      <div className="grid min-h-screen grid-cols-[15rem_1fr]">
+      <div className="scrollbar-thumb-gray-600 scrollbar-thin scrollbar-track-gray-700 grid max-h-screen grid-cols-[15rem_1fr] overflow-y-scroll">
         <main className="col-start-2 ml-5 max-w-screen px-24 pt-18 pb-5">{children}</main>
       </div>
     </>
