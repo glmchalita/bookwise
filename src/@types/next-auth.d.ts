@@ -8,7 +8,7 @@ declare module 'next-auth' {
     profile_url: string
     avatar_url: string | null
     image?: string | null
-    email?: string | null
+    email: string | null
     emailVerified?: Date | null
   }
 
