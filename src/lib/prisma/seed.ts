@@ -3,6 +3,7 @@ import { books } from './constants/books'
 import { categories } from './constants/categories'
 import { ratings } from './constants/ratings'
 import { users } from './constants/users'
+
 const prisma = new PrismaClient()
 
 async function main() {
@@ -17,6 +18,7 @@ async function main() {
       data: {
         id: user.id,
         name: user.name,
+        email: user.email,
         profile_url: user.profile_url,
         avatar_url: user.avatar_url,
       },
@@ -75,12 +77,7 @@ async function main() {
     })
   })
 
-  await prisma.$transaction([
-    ...categoriesSeed,
-    ...booksSeed,
-    ...usersSeed,
-    ...ratingsSeed,
-  ])
+  await prisma.$transaction([...categoriesSeed, ...booksSeed, ...usersSeed, ...ratingsSeed])
 }
 
 main()
