@@ -10,4 +10,4 @@ services:
       POSTGRES_DB: bookwise
       PGDATA: /data/postgres
     volumes:
-      - ./prisma/data/pg:/data/postgres
+      - ./src/lib/prisma/data/pg:/data/postgres
